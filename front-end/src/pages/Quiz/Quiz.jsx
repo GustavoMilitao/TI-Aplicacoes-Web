@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import Question from '../Question/Question';
+import UserNavbar from '../../Components/UserNavbar/UsersNavbar'; 
 
 function Quiz() {
   const [questions, setQuestions] = useState([]);
@@ -18,13 +19,16 @@ function Quiz() {
 
   const handleAnswer = (isCorrect) => {
     if (isCorrect) {
-      setScore(score + 1);
+      setScore((prevScore) => prevScore + 1);
     }
 
     if (currentQuestionIndex < questions.length - 1) {
       setCurrentQuestionIndex(currentQuestionIndex + 1);
     } else {
-      navigate('/feedback', { state: { score, total: questions.length } });
+      setScore(prevScore => {
+        navigate('/feedback', { state: { score: prevScore, total: questions.length } });
+        return prevScore;
+      });
     }
   };
 
@@ -34,6 +38,7 @@ function Quiz() {
 
   return (
     <div>
+      <UserNavbar />
       <h2>Quiz - Pergunta {currentQuestionIndex + 1}</h2>
       <Question 
         question={questions[currentQuestionIndex]} 

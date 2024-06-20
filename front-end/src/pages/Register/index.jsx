@@ -20,7 +20,7 @@ function Register() {
     setDisabled(!isValid);
     const user = JSON.parse(localStorage.getItem('user'));
     if (user) {
-      navigate('/user');
+      navigate('/select-theme');
     }
   }, [name, email, password]);
 
@@ -53,7 +53,7 @@ function Register() {
         setHiddenMessage(true);
       } else {
         localStorage.setItem('user', JSON.stringify(data));
-        navigate('/user');
+        navigate('/select-theme');
       }
     } catch (error) {
       console.log(error);

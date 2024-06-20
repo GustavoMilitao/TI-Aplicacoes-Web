@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import UserNavbar from '../../Components/UserNavbar/UsersNavbar'; 
 
 function SelectSettings() {
   const [timer, setTimer] = useState(60);
@@ -12,6 +13,7 @@ function SelectSettings() {
 
   return (
     <div>
+      <UserNavbar />
       <h2>Select Settings</h2>
       <div>
         <label>Timer: </label>

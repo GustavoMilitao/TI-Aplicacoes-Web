@@ -16,7 +16,7 @@ function Login() {
     const loginRegex = /\S+@\S+\.com/;
     const user = JSON.parse(localStorage.getItem('user'));
     if (user) {
-      navigate('/user');
+      navigate('/select-theme');
     }
 
     if (password.length >= MIN_PASSWORD_LENGTH && loginRegex.test(email)) {
@@ -44,7 +44,7 @@ function Login() {
     } else {
       setAuthenticated(false);
       localStorage.setItem('user', JSON.stringify(data));
-      navigate('/user');
+      navigate('/select-theme');
     }
   };
 

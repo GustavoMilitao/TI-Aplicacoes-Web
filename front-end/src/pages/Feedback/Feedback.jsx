@@ -19,6 +19,7 @@ function Feedback() {
       <h2>Feedback</h2>
       <p>Você acertou {score} de {total} perguntas.</p>
       <button onClick={handleRetry}>Repetir Quiz</button>
+      <br></br>
       <button onClick={handleMenu}>Voltar ao Menu</button>
     </div>
   );

@@ -11,8 +11,8 @@ function Question({ question, onAnswer }) {
       <h3>{question.text}</h3>
       <div>
         {question.answers.map((answer, index) => (
-          <button key={index} onClick={() => handleAnswer(answer)}>
-            {answer}
+          <button style={{paddingRight: 10 + 'em'}} key={index} onClick={() => handleAnswer(answer)}>
+            {answer + ' '}
           </button>
         ))}
       </div>
