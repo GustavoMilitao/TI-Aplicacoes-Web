@@ -1,5 +1,6 @@
 import React from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
+import Button from '@mui/material/Button';
 
 function Feedback() {
   const navigate = useNavigate();
@@ -16,11 +17,13 @@ function Feedback() {
 
   return (
     <div>
-      <h2>Feedback</h2>
+      <h2>Resultado:</h2>
       <p>Você acertou {score} de {total} perguntas.</p>
-      <button onClick={handleRetry}>Repetir Quiz</button>
       <br></br>
-      <button onClick={handleMenu}>Voltar ao Menu</button>
+      <Button variant="contained" onClick={handleRetry}>Repetir Quiz</Button>
+      <br></br>
+      <br></br>
+      <Button variant="contained" onClick={handleMenu}>Voltar ao Menu</Button>
     </div>
   );
 }

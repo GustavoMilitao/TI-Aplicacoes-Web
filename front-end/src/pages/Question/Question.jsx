@@ -1,4 +1,5 @@
 import React from 'react';
+import Button from '@mui/material/Button';
 
 function Question({ question, onAnswer }) {
   const handleAnswer = (answer) => {
@@ -11,9 +12,9 @@ function Question({ question, onAnswer }) {
       <h3>{question.text}</h3>
       <div>
         {question.answers.map((answer, index) => (
-          <button style={{paddingRight: 10 + 'em'}} key={index} onClick={() => handleAnswer(answer)}>
+          <Button variant="contained" key={index} onClick={() => handleAnswer(answer)}>
             {answer + ' '}
-          </button>
+          </Button>
         ))}
       </div>
     </div>

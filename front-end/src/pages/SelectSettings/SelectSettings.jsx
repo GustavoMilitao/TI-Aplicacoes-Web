@@ -1,6 +1,12 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import UserNavbar from '../../Components/UserNavbar/UsersNavbar'; 
+import UserNavbar from '../../Components/UserNavbar/UsersNavbar';
+import Button from '@mui/material/Button';
+import InputLabel from '@mui/material/InputLabel';
+import MenuItem from '@mui/material/MenuItem';
+import Select from '@mui/material/Select';
+import TextField from '@mui/material/TextField';
+import FormControl from '@mui/material/FormControl';
 
 function SelectSettings() {
   const [timer, setTimer] = useState(60);
@@ -14,20 +20,29 @@ function SelectSettings() {
   return (
     <div>
       <UserNavbar />
-      <h2>Select Settings</h2>
+      <h2>Selecione as configurações do Quiz</h2>
+      <br></br>
       <div>
-        <label>Timer: </label>
-        <input type="number" value={timer} onChange={(e) => setTimer(e.target.value)} />
+        <TextField value={timer} onChange={(e) => setTimer(e.target.value)} id="outlined-basic" label="Timer" variant="outlined" />
       </div>
+      <br></br>
       <div>
-        <label>Dificuldade: </label>
-        <select value={difficulty} onChange={(e) => setDifficulty(e.target.value)}>
-          <option value="easy">Fácil</option>
-          <option value="medium">Médio</option>
-          <option value="hard">Difícil</option>
-        </select>
+        <FormControl>
+          <InputLabel id="demo-simple-select-label">Age</InputLabel>
+          <Select
+            labelId="demo-simple-select-label"
+            id="demo-simple-select"
+            value={difficulty}
+            label="Dificuldade"
+            onChange={(e) => setDifficulty(e.target.value)}>
+            <MenuItem value={"easy"}>Fácil</MenuItem>
+            <MenuItem value={"medium"}>Médio</MenuItem>
+            <MenuItem value={"hard"}>Difícil</MenuItem>
+          </Select>
+        </FormControl>
       </div>
-      <button onClick={handleStartQuiz}>Start Quiz</button>
+      <br></br>
+      <Button variant="contained" onClick={handleStartQuiz}>Start Quiz</Button>
     </div>
   );
 }
