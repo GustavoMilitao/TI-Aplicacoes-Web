@@ -13,9 +13,13 @@ function SelectTheme() {
   return (
     <div>
       <UserNavbar />
-      <h2>Selecione o desafio</h2>
+      <div style={{ display: 'flex', justifyContent: 'center' }}>
+        <h2>Selecione o desafio</h2>
+      </div>
       <br></br>
-      <Button variant="contained" onClick={handleSelectTheme}>Lógica</Button>
+      <div style={{ display: 'flex', justifyContent: 'center' }}>
+        <Button variant="contained" onClick={handleSelectTheme}>Lógica</Button>
+      </div>
     </div>
   );
 }

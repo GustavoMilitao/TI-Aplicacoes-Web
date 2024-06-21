@@ -1,0 +1,70 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.container-background {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  z-index: 1; /* Camada mais baixa para o fundo */
+}
+
+.right, .left {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 50%;
+  animation-duration: 4s;
+  animation-fill-mode: forwards;
+  z-index: 1; /* Camada baixa para as animações */
+}
+
+.left {
+  left: 0;
+  background-color: #008080;
+  animation-name: slideInToLeft;
+}
+
+.right {
+  right: 0;
+  background-color: #ff5050;
+  animation-name: slideInToRight;
+}
+
+@keyframes slideInToRight {
+  0% {
+    transform: translateX(-200%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes slideInToLeft {
+  0% {
+    transform: translateX(200%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.flexlog {
+  position: relative;
+  z-index: 10; /* Camada mais alta para o conteúdo */
+}
+
+section.flexlog.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  position: relative;
+  z-index: 10; /* Camada mais alta para o conteúdo */
+}
